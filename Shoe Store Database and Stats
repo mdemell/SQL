@@ -1,0 +1,28 @@
+/*create a shoe store database*/
+
+CREATE TABLE Shoes (id INTEGER PRIMARY KEY, Brand TEXT, Size INTEGER, Gender TEXT, Quantity INTEGER, Price INTEGER);
+
+INSERT into Shoes VALUES(1, "Nike", 6, "Female", 6, 75);
+INSERT into Shoes VALUES(2, "Adidas", 7, "Female", 5, 85);
+INSERT into Shoes VALUES(3, "New Balance", 8, "Female", 3, 90);
+INSERT into Shoes VALUES(4, "Under Armor", 8.5, "Female", 5, 90);
+INSERT into Shoes VALUES(5, "Hoka", 9, "Female", 7, 95);
+INSERT into Shoes VALUES(6, "Altra", 10, "Female", 5, 115);
+INSERT into Shoes VALUES(7, "Altra", 8, "Female", 3, 125);
+INSERT into Shoes VALUES(8, "Nike", 7, "Male", 5, 70);
+INSERT into Shoes VALUES(9, "Adidas", 8, "Male", 5, 85);
+INSERT into Shoes VALUES(10, "New Balance", 8.5, "Male", 2, 95);
+INSERT into Shoes VALUES(12, "Under Armor", 9, "Male", 7, 100);
+INSERT into Shoes VALUES(13, "Hoka", 9, "Male", 4, 110);
+INSERT into Shoes VALUES(14, "Altra", 9.5, "Male", 7, 130);
+INSERT into Shoes VALUES(15, "Altra", 11, "Male", 6, 150);
+
+/*display the database ordered by price*/
+SELECT * FROM Shoes
+ORDER BY Price DESC;
+
+/*what are the top 5 stocked shoe brand within the store and their quantities?*/ 
+SELECT Brand, Size, Quantity, Price
+FROM Shoes
+order by Quantity desc
+limit 5;
