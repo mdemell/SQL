@@ -1,0 +1,56 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people 
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT, 
+    age INTEGER);
+
+INSERT INTO famous_people (name, age)
+VALUES ("Mac Miller", 26);
+INSERT INTO famous_people (name, age)
+VALUES ("Drake", 36);
+INSERT INTO famous_people (name, age)
+VALUES ("John Mayer", 45);
+INSERT INTO famous_people (name, age)
+VALUES ("Post Malone", 27);
+INSERT INTO famous_people (name, age)
+VALUES ("Rihanna", 35);
+INSERT INTO famous_people (name, age)
+VALUES  ("Adele", 35);
+INSERT INTO famous_people (name, age) 
+VALUES ("Frank Ocean", 35);
+INSERT INTO famous_people (name, age)
+VALUES ("Phoebe Bridgers", 28);
+
+SELECT * FROM famous_people;
+
+CREATE TABLE famous_people_facts 
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+        musician_id INTEGER,
+        talent TEXT, 
+        genre TEXT, 
+        top_song TEXT, 
+        origin TEXT);
+
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (1, "musician", "hip hop", "Self Care", "Pittsburgh, PS");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (2, "musician", "rap", "One Dance", "Toronto, Canada");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (3, "musician", "blues", "New Light", "Bridgeport, CT");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (4, "musician", "hip hop/pop", "Rockstar", "Syracuse, NY");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (5, "musician", "pop", "We Found Love", "St. Michael, Barbados");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (6, "musician", "soul", "Someone Like You", "London, UK");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (7, "musician", "neo soul", "Lost", "Long Beach, CA");
+INSERT INTO famous_people_facts (musician_id, talent, genre, top_song, origin)
+VALUES (8, "musician", "indie rock", "Motion Sickness", "Los Angeles");
+
+SELECT * FROM famous_people_facts;
+
+SELECT famous_people.name, famous_people_facts.genre, famous_people_facts.top_song 
+    FROM famous_people
+    JOIN famous_people_facts
+ON famous_people.id = famous_people_facts.musician_id;
