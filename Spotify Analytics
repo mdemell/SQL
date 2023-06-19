@@ -44,8 +44,8 @@ GROUP BY artist_name, track_name
 ORDER BY popularity ASC
 LIMIT 10;
 
-#Determined the avg danceability by artist and track. 
-SELECT artist_name, track_name, AVG(danceability)
+#Determined the avg energy and danceability by artist and track. 
+SELECT artist_name, track_name, AVG (energy), AVG(danceability)
 FROM BIT_DB.Spotifydata
 GROUP BY artist_name, track_name;
 
