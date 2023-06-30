@@ -1,3 +1,5 @@
+/CTE practice and Window Functions utilizing bike lane data/
+
 CREATE TABLE BIT_DB.CityBikeLanes (
 id integer primary key,
 year_installed year not null,
