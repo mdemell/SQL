@@ -70,6 +70,9 @@ INSERT INTO BIT_DB.CityBikeLanes values(58,2011, 2021, "Beaver", 3.5, 2.5, "no")
 INSERT INTO BIT_DB.CityBikeLanes values(59,2008, 2021,"Kensington",4,4.9,"yes");
 INSERT INTO BIT_DB.CityBikeLanes values(60,2002, 2021,"Mouse",4.5,4.3,"no");
 
+/* Hypothetical boss wants a list of all the bike lanes that have an average safety rating of 4.0 or higher. 
+She also wants to see the average safety rating for each of those bike lanes, and a label that says "Safe Lane". */
+
 SELECT * FROM CityBikeLanes;
 SELECT * FROM CityBikeLanes LIMIT 10;
 
@@ -87,6 +90,9 @@ rating,
 'Safe Lane' as LABEL
 FROM average_safety_rating_CTE
 WHERE rating >= 4.0;
+
+/* Additionally, a list of all the bike lanes, both safety ratings for each lane, 
+the average safety rating for each lane, and a label with the recommendation as "Remove", "Leave As-Is", or "Improvements Needed". */
 
 SELECT street, safetyrating,
 AVG(safetyrating) OVER (PARTITION BY street) as "Average_safety_rating"
